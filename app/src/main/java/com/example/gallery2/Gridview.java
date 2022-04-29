@@ -17,5 +17,6 @@ public class Gridview extends AppCompatActivity {
         houp = findViewById(R.id.grid_pic);
         nationAdapter myNationAdapter = new nationAdapter(getApplicationContext(),houp_nation);
         houp.setAdapter(myNationAdapter);
+
     }
 }
