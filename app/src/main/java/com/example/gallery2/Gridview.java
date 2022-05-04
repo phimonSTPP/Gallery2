@@ -1,8 +1,11 @@
 package com.example.gallery2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class Gridview extends AppCompatActivity {
@@ -18,5 +21,13 @@ public class Gridview extends AppCompatActivity {
         nationAdapter myNationAdapter = new nationAdapter(getApplicationContext(),houp_nation);
         houp.setAdapter(myNationAdapter);
 
+        houp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent fullIntent =new Intent(getApplicationContext(),Fullview.class);
+                fullIntent.putExtra("position",i);
+                startActivity(fullIntent);
+            }
+        });
     }
 }
